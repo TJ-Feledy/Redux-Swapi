@@ -12,6 +12,7 @@ export function fetching() {
 
     axios.get('https://swapi.co/api/people')
       .then((res) => {
+        console.log(res.data)
         dispatch({type: SUCCESS, payload: res.data})
       })
       .catch((err) => {
