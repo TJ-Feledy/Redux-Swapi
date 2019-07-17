@@ -10,9 +10,8 @@ export function fetch() {
   return (dispatch) => {
     dispatch({type: FETCHING})
 
-    axios.get('https://swapi.co/api/people')
+    axios.get('https://swapi.co/api/people/')
       .then((res) => {
-        console.log(res.data)
         dispatch({type: SUCCESS, payload: res.data})
       })
       .catch((err) => {

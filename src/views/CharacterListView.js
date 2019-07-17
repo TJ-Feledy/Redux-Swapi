@@ -5,9 +5,9 @@ import { CharacterList } from "../components";
 import { fetch } from '../actions/index'
 
 class CharacterListView extends React.Component {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   componentDidMount() {
     this.props.fetch()
@@ -29,7 +29,7 @@ class CharacterListView extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    characters: state.characters,
+    characters: state.charsReducer.characters,
     fetching: state.fetching,
   }
 }

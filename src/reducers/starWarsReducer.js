@@ -12,7 +12,6 @@ const initialState = {
 export const charsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCHING: {
-      console.log(action.payload)
       return {
         ...state,
         fetching: true,
@@ -23,14 +22,14 @@ export const charsReducer = (state = initialState, action) => {
         ...state,
         fetching: false,
         error: null,
-        characters: action.payload
+        characters: action.payload.results
       }
     }
     case FAILURE: {
       return {
         ...state,
         fetching: false,
-        error: action.payload.message
+        error: action.payload
       }
     }
     default:
